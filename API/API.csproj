@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\OMDBAPI.Integration\OMDBAPI.Integration.csproj" />
   </ItemGroup>
 
 </Project>

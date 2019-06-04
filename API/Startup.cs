@@ -15,6 +15,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OMDBAPI.Integration;
+using OMDBAPI.Integration.Interfaces;
 using Repository.Implementations;
 
 namespace API
@@ -40,6 +42,7 @@ namespace API
         private void Services(IServiceCollection services)
         {
             services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IOMDBService, OMDBService>();
         }
 
         private void Repositories(IServiceCollection services)

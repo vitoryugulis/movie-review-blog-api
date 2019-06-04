@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Core.Models;
+using OMDBAPI.Integration.Models;
 
 namespace Core.Interfaces.Services
 {
@@ -11,5 +13,6 @@ namespace Core.Interfaces.Services
          void Remove(Post post);
          void Add(Post post);
          bool CheckIfExists(int id);
+         Task<JsonMovie> GetOMDBMovie(string movieTitle);
     }
 }
