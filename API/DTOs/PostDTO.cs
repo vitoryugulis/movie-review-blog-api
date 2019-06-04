@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using OMDBAPI.Integration.Models;
 
 namespace API.DTOS
 {
@@ -11,6 +12,7 @@ namespace API.DTOS
         public string AuthorName { get; set; }
         public DateTime CreateDate { get; set; }
         public string MovieName { get; set; }
+        public JsonMovie ImdbInfo {get; set;}
         public ICollection<CommentDTO> Comments { get; set; }
     }
 }
