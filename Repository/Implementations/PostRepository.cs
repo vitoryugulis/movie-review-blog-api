@@ -18,5 +18,9 @@ namespace Repository.Implementations
         {
             return db.Posts.Include(x => x.Comments).SingleOrDefault(x => x.Id == id);
         }
+        public bool CheckIfExists(int id)
+        {
+            return db.Set<Post>().Any(x=> x.Id == id);
+        }
     }
 }

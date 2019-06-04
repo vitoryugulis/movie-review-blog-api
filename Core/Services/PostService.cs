@@ -14,7 +14,7 @@ namespace Core.Services
         {
             this.postRepository = postRepository;
         }
-        public void Create(Post post)
+        public void Add(Post post)
         {
             postRepository.Add(post);
         }
@@ -37,6 +37,11 @@ namespace Core.Services
         public void Update(Post post)
         {
             postRepository.Update(post);
+        }
+
+        public bool CheckIfExists(int id)
+        {
+            return postRepository.CheckIfExists(id);
         }
     }
 }

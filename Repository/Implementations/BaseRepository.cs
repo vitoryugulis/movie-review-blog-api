@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Repository.Context;
 
 namespace Repository.Implementations

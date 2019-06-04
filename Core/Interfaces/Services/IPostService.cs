@@ -9,6 +9,7 @@ namespace Core.Interfaces.Services
          Post GetById(int id);
          void Update(Post post);
          void Remove(Post post);
-         void Create(Post post);
+         void Add(Post post);
+         bool CheckIfExists(int id);
     }
 }
