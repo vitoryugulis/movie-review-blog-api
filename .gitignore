@@ -79,3 +79,7 @@ artifacts/
 #Visual Studio Code
 
 .vscode
+
+#environment files
+
+.env
