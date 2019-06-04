@@ -13,29 +13,29 @@ namespace Repository.Implementations
         {
             this.db = new BlogContext();
         }
-        public void Add(TEntity entity)
+        public virtual void Add(TEntity entity)
         {
             db.Add(entity);
             db.SaveChanges();
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
             db.Remove(entity);
             db.SaveChanges();
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return db.Set<TEntity>().ToList();
         }
 
-        public TEntity GetById(int id)
+        public virtual TEntity GetById(int id)
         {
             return db.Set<TEntity>().Find(id);
         }
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
             db.Update(entity);
             db.SaveChanges();
