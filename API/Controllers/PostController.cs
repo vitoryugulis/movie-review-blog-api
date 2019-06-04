@@ -43,8 +43,15 @@ namespace API.Controllers
 
         // DELETE api/posts/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete([FromServices] IPostService service, int id)
         {
+            var post = service.GetById(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            service.Remove(post);
+            return Ok();
         }
     }
 }
