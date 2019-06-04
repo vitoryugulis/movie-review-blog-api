@@ -13,13 +13,13 @@ namespace Repository.Implementations
         {
             this.db = new BlogContext();
         }
-        public void AddPost(TEntity entity)
+        public void Add(TEntity entity)
         {
             db.Add(entity);
             db.SaveChanges();
         }
 
-        public void Delete(TEntity entity)
+        public void Remove(TEntity entity)
         {
             db.Remove(entity);
             db.SaveChanges();

@@ -8,7 +8,7 @@ namespace Core.Interfaces.Repositories
         IEnumerable<TEntity> GetAll();
         TEntity GetById(int id);
         void Update(TEntity entity);
-        void Delete(TEntity entity);
-        void AddPost(TEntity entity);
+        void Remove(TEntity entity);
+        void Add(TEntity entity);
     }
 }
