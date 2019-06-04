@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using API.DTOS;
 using AutoMapper;
 using Core.Interfaces.Services;
 using Core.Models;
 using Microsoft.AspNetCore.Mvc;
+using OMDBAPI.Integration.Models;
 
 namespace API.Controllers
 {
@@ -23,14 +25,17 @@ namespace API.Controllers
 
         // GET api/posts/5
         [HttpGet("{id}")]
-        public IActionResult Get([FromServices] IPostService service, int id)
+        public async Task<IActionResult> Get([FromServices] IMapper mapper, [FromServices] IPostService service, int id)
         {
             var post = service.GetById(id);
             if (post == null)
             {
                 return NotFound();
             }
-            return Ok(post);
+            var omdbMovie = await service.GetOMDBMovie(post.MovieName);
+            var postDTO = mapper.Map<Post, PostDTO>(post);
+            postDTO.ImdbInfo = omdbMovie;
+            return Ok(postDTO);
         }
 
         // POST api/posts
