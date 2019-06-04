@@ -12,7 +12,7 @@ namespace Repository.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            DotNetEnv.Env.Load("../Repository/.env", false);
+            DotNetEnv.Env.Load("../.env", false);
             var connString = DotNetEnv.Env.GetString("database");
             optionsBuilder.UseSqlite(connString);
         }
