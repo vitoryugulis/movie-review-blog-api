@@ -40,8 +40,8 @@ Antes de consumir as rotas pelo POSTMAN, certifique-se de desligar a opção SSL
 https://localhost:5001/swagger/index.html
 
 ## Consumindo as rotas
-GET http://localhost:5000/posts => retornar todos os posts
-GET http://localhost:5000/posts/{id} => retorna um post por ID
-POST http://localhost:5000/posts => cria um post
-PUT http://localhost:5000/{id} => atualiza um post por id
-DELETE http://localhost:5000/{id} => deleta um post por id
+1. GET http://localhost:5000/posts => retornar todos os posts
+1. GET http://localhost:5000/posts/{id} => retorna um post por ID
+1. POST http://localhost:5000/posts => cria um post
+1. PUT http://localhost:5000/{id} => atualiza um post por id
+1. DELETE http://localhost:5000/{id} => deleta um post por id
