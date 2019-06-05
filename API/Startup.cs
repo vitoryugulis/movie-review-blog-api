@@ -18,6 +18,7 @@ using Microsoft.Extensions.Options;
 using OMDBAPI.Integration;
 using OMDBAPI.Integration.Interfaces;
 using Repository.Implementations;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace API
 {
@@ -37,6 +38,10 @@ namespace API
             services.AddSingleton(AutoMapperConfiguration.Configure());
             Services(services);
             Repositories(services);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Movie Review Blog API", Version = "v1" });
+            });
         }
 
         private void Services(IServiceCollection services)
@@ -65,6 +70,11 @@ namespace API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Review Blog API");
+            });
         }
     }
 }
