@@ -36,8 +36,9 @@ Navegue para a pasta do projeto API e rode o seguinte comando no terminal:
 Antes de consumir as rotas pelo POSTMAN, certifique-se de desligar a opção SSL certificate verification nas configurações.
 
 ## Swagger
+Enquanto estiver rodando a API, é possível acessar a documentação do Swagger pelo seguinte link:
 
-https://localhost:5001/swagger/index.html
+1. https://localhost:5001/swagger/index.html
 
 ## Consumindo as rotas
 1. GET http://localhost:5000/posts => retornar todos os posts
