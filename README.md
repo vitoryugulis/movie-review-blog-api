@@ -11,18 +11,18 @@ Na raiz do projeto, rodar os seguintes comandos no terminal:
 
 ## Adicionar os dados gerados pelo mockaroo ao banco local do sqlite
 Navegar para a pasta /Console.MockarooReader e rodar o seguinte comando no terminal:
-1.dotnet run
+1. dotnet run
 Essa sequência de frases indica sucesso:
-1.Running mockaroo file handler...
-1.Done inserting data...
+1. Running mockaroo file handler...
+1. Done inserting data...
 
 ## Configurando o arquivo .env
 O .env deve ser colocado na raiz do projeto, junto com o .gitignore e o arquivo .sln.
 O arquivo .example.env já possui as chaves, é só colocar os valores em um novo arquivo chamado .env.
 
 Exemplo de .env:
-1.omdb_api=http://www.omdbapi.com
-1.omdb_api_key=929292929
+1. omdb_api=http://www.omdbapi.com
+1. omdb_api_key=929292929
 
 OBS: o valor da chave omdb_api deve ser igual ao exemplo.
 
@@ -30,7 +30,7 @@ A sua chave deve ser adquirida no próprio site da omdb: http://www.omdbapi.com/
 
 ## Rodar a API
 Navegue para a pasta do projeto API e rode o seguinte comando no terminal:
-1.dotnet run
+1. dotnet run
 
 Antes de consumir as rotas pelo POSTMAN, certifique-se de desligar a opção SSL certificate verification nas configurações.
 
