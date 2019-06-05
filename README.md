@@ -1,9 +1,14 @@
 # movie-review-blog-api
 
 ## Requisitos:
-1. .Net Core SDK 2.2
+Windows:
+1. .Net Core SDK 2.2 compatível com Visual Studio 2017
 https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.107-windows-x64-installer
-1. De preferência, abra o projeto utilizando o Visual Studio Code
+
+Linux Ubuntu (no link tem como escolher a distro do linux, caso o seu não seja ubuntu):
+1. https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
+
+De preferência, abra o projeto utilizando o Visual Studio Code
 
 ## Restaurar dependências e compilar o projeto
 Na raiz do projeto, rodar os seguintes comandos no terminal:
