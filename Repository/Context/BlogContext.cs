@@ -1,7 +1,6 @@
 using System;
 using Core.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Repository.Context
 {
@@ -12,9 +11,7 @@ namespace Repository.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            DotNetEnv.Env.Load("../.env", false);
-            var connString = DotNetEnv.Env.GetString("database");
-            optionsBuilder.UseSqlite(connString);
+            optionsBuilder.UseSqlite("Data Source=../Repository/LocalDatabase/blog.db");
         }
     }
 }
