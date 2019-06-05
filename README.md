@@ -27,7 +27,7 @@ Exemplo de .env:
 
 OBS: o valor da chave omdb_api deve ser igual ao exemplo.
 
-A sua chave deve ser adquirida no próprio site da omdb: http://www.omdbapi.com/apikey.aspx
+A sua omdb_api_key deve ser adquirida no próprio site da omdb: http://www.omdbapi.com/apikey.aspx
 
 ## Rodar a API
 Navegue para a pasta do projeto API e rode o seguinte comando no terminal:
