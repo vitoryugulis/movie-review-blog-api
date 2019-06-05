@@ -6,7 +6,7 @@ Windows:
 https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.107-windows-x64-installer
 
 Linux Ubuntu (no link tem como escolher a distro do linux, caso o seu não seja ubuntu):
-1. https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
+1. .NET Core SDK 2.2 https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current
 
 De preferência, abra o projeto utilizando o Visual Studio Code
 
