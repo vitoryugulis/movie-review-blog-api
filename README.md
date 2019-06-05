@@ -12,6 +12,7 @@ Na raiz do projeto, rodar os seguintes comandos no terminal:
 ## Adicionar os dados gerados pelo mockaroo ao banco local do sqlite
 Navegar para a pasta /Console.MockarooReader e rodar o seguinte comando no terminal:
 1. dotnet run
+
 Essa sequência de frases indica sucesso:
 1. Running mockaroo file handler...
 1. Done inserting data...
