@@ -20,7 +20,7 @@ namespace ConsoleApp.MockarooReader
 
         private List<JsonPost> ReadMockarooFile()
         {
-            using (StreamReader r = new StreamReader("asdadasd.json"))
+            using (StreamReader r = new StreamReader("../Console.MockarooReader/MOCK_DATA.json"))
             {
                 string json = r.ReadToEnd();
                 List<JsonPost> items = JsonConvert.DeserializeObject<List<JsonPost>>(json);
@@ -38,7 +38,6 @@ namespace ConsoleApp.MockarooReader
                 var post = mapper.Map<Post>(jsonPost);
                 postRepository.Add(post);
             }
-
         }
 
     }
