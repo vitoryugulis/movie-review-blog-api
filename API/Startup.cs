@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.AutoMapper;
+using AutoMapper;
+using Core.Interfaces.Repositories;
+using Core.Interfaces.Services;
+using Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +15,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OMDBAPI.Integration;
+using OMDBAPI.Integration.Interfaces;
+using Repository.Implementations;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace API
 {
@@ -26,6 +35,24 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton(AutoMapperConfiguration.Configure());
+            Services(services);
+            Repositories(services);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Movie Review Blog API", Version = "v1" });
+            });
+        }
+
+        private void Services(IServiceCollection services)
+        {
+            services.AddTransient<IPostService, PostService>();
+            services.AddTransient<IOMDBService, OMDBService>();
+        }
+
+        private void Repositories(IServiceCollection services)
+        {
+            services.AddTransient<IPostRepository, PostRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +70,11 @@ namespace API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Review Blog API");
+            });
         }
     }
 }

@@ -1,8 +1,8 @@
 using System;
 
-namespace Core.Models
+namespace API.DTOS
 {
-    public class Comment
+    public class CommentDTO
     {
         public int Id { get; set; }
         public string AuthorName { get; set; }
@@ -10,5 +10,4 @@ namespace Core.Models
         public DateTime CreateDate { get; set; }
         public int PostId { get; set; }
     }
-    
 }
